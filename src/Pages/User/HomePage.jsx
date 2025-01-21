@@ -3,7 +3,7 @@ import {  Clock, Award, Gift } from 'lucide-react';
 import Header from '../../Components/Header'
 import Footer from '../../Components/Footer'
 import ProductList from '../../Components/ProductList';
-
+import backeryImage from '../../assets/images/bakery.png'
 
 const Home = () => {
   return (
@@ -50,7 +50,7 @@ const Home = () => {
             <div className="md:w-1/2 md:pl-8">
               <div className="relative h-72 md:h-96 rounded-lg overflow-hidden shadow-lg">
                 <img
-                  src="/src/assets/images/bakery.png"
+                  src={backeryImage}
                   alt="Our Bakery"
                   className="w-full h-full object-cover"
                 />
