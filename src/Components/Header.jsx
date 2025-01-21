@@ -8,6 +8,7 @@ import axioInstence from '../utils/axioInstence';
 import { useSelector } from 'react-redux';
 import toast, { Toaster } from "react-hot-toast";
 import ConfirmationPopup from './ConformButton';
+import bannerImg1 from '../assets/images/banner1.jpg'
 
 const Header = () => {
   
@@ -18,7 +19,7 @@ const Header = () => {
   const navigate = useNavigate()
  const dispatch = useDispatch()
   const images = [
-    '/src/assets/images/banner1.jpg',
+    bannerImg1,
     '/src/assets/images/banner2.jpg',
     '/src/assets/images/banner3.jpg',
     '/src/assets/images/banner4.jpg',
