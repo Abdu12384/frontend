@@ -9,6 +9,10 @@ import { useSelector } from 'react-redux';
 import toast, { Toaster } from "react-hot-toast";
 import ConfirmationPopup from './ConformButton';
 import bannerImg1 from '../assets/images/banner1.jpg'
+import bannerImg2 from '../assets/images/banner2.jpg'
+import bannerImg3 from '../assets/images/banner3.jpg'
+import bannerImg4 from '../assets/images/banner4.jpg'
+
 
 const Header = () => {
   
@@ -20,10 +24,10 @@ const Header = () => {
  const dispatch = useDispatch()
   const images = [
     bannerImg1,
-    '/src/assets/images/banner2.jpg',
-    '/src/assets/images/banner3.jpg',
-    '/src/assets/images/banner4.jpg',
-    '/src/assets/images/banner5.jpg',
+    bannerImg2,
+    bannerImg3,
+    bannerImg4,
+    
   ]; 
 
  
