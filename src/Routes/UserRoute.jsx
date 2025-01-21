@@ -47,12 +47,9 @@ function UserRoute() {
         <Route path='wallet' element={<WalletPage/>}/> 
         <Route path='order-success' element={<OrderConfirmation/>}/> 
         <Route path='order-failed' element={<PaymentError/>}/> 
+    </Route>
         <Route path='about' element={<AboutPage/>}/> 
         <Route path='contact' element={<ContactPage/>}/> 
-        
-        
-    </Route>
-          
          <Route path="*" element={<PageNotFound />} />
     </Routes>
   )
