@@ -27,7 +27,7 @@ const ProtectedRoute = () => {
   console.log('userhere',user);
   
   if (!isAuthenticated || !user.isActive) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/user/login" replace />;
   }
 
   
