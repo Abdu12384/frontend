@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axioInstence from '../../utils/axioInstence';
 import toast, { Toaster } from "react-hot-toast";
+import locationImg from '../../assets/images/location-img.jpg'
 
 const AddressForm = ({ onSubmit, initialAddress }) => {
   const [addressData, setAddressData] = useState({
@@ -85,13 +86,13 @@ const AddressForm = ({ onSubmit, initialAddress }) => {
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap- items-center">
         <div className="hidden md:block">
           <img
-            src="/src/assets/images/location-img.jpg"
+            src={locationImg}
             alt="Address Form"
             className="w-full h-auto rounded-lg shadow-lg"
           />
         </div>
         <div className="bg-white shadow-md rounded-lg p-6">
-          <h2 className="text-2xl font-bold mb-6">Edit Address</h2>
+          <h2 className="text-2xl font-bold mb-6">{initialAddress ? 'EditAddress':'Add Address'}</h2>
 
           <form onSubmit={handleSubmit} className="space-y-5">
           <div className="space-y-2">

@@ -13,7 +13,6 @@ function Sidebar({ isOpen }) {
     { icon: Package, name: 'Products', path: '/admin/products' },
     { icon: ShoppingCart, name: 'Orders', path: '/admin/orders' },
     { icon: Tag, name: 'Coupon', path: '/admin/coupon' },
-    { icon: Image, name: 'Banner', path: '/admin/banner' },
     { icon: Users, name: 'Customer', path: '/admin/customers' },
     { icon: BarChart2, name: 'Sales Report', path: '/admin/sales-report' }, 
   ];
