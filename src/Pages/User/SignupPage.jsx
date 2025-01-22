@@ -96,7 +96,7 @@ const dispatch = useDispatch()
           
           const {credential} = response
           
-          const res = await axios.post('http://localhost:3000/auth/google/signup', { tokenId:credential });
+          const res = await axioInstence.post('/auth/google/signup', { tokenId:credential });
           console.log('Google SignUp Successful:', res.data);
           if(res.data){
             toast.success("Signup successful! Welcome KBSBakes.")

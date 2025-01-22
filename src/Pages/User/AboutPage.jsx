@@ -7,7 +7,6 @@ import { Link } from "react-router-dom"
 
 
 export default function AboutPage() {
-  const [isPlaying, setIsPlaying] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
  
   return (
