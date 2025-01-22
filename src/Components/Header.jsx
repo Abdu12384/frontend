@@ -190,7 +190,7 @@ const Header = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#3d2516] bg-opacity-90">
               <NavLink href="/" mobile>Home</NavLink>
-              <NavLink href="/about" mobile>About</NavLink>
+              <NavLink href="/user/about" mobile>About</NavLink>
               <NavLink href="/user/cakes" mobile>Cakes</NavLink>
               <NavLink href="/user/contact" mobile>Contact</NavLink>
             </div>
@@ -205,7 +205,9 @@ const Header = () => {
           <p className="text-xl md:text-2xl text-white mb-8 drop-shadow-lg animate-fade-in-up animation-delay-300">
             Handcrafted cakes for every occasion
           </p>
-          <button className="bg-[#8b6c5c] text-white py-3 px-6 rounded-full text-lg font-semibold hover:bg-[#765341] transition duration-300 shadow-lg animate-fade-in-up animation-delay-600">
+          <button 
+          onClick={()=>navigate('/user/cakes')}
+          className="bg-[#8b6c5c] text-white py-3 px-6 rounded-full text-lg font-semibold hover:bg-[#765341] transition duration-300 shadow-lg animate-fade-in-up animation-delay-600">
             Explore Our Cakes
           </button>
         </div>

@@ -19,9 +19,9 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <FooterLink href="/">Home</FooterLink>
-              <FooterLink href="/about">About Us</FooterLink>
-              <FooterLink href="/products">Our Cakes</FooterLink>
-              <FooterLink href="/contact">Contact</FooterLink>
+              <FooterLink href="/user/about">About Us</FooterLink>
+              <FooterLink href="/user/cakes">Our Cakes</FooterLink>
+              <FooterLink href="/user/contact">Contact</FooterLink>
             </ul>
           </div>
           <div>
@@ -30,12 +30,12 @@ const Footer = () => {
               <p className="mb-2">123 Bakery Street</p>
               <p className="mb-2">Caketown, CT 12345</p>
               <p className="mb-2">Phone: (555) 123-4567</p>
-              <p>Email: info@cakedelights.com</p>
+              <p>Email: kbsbakes@gmail.com</p>
             </address>
           </div>
         </div>
         <div className="mt-8 border-t border-[#8b6c5c] pt-8 text-center">
-          <p className="text-sm">&copy; {new Date().getFullYear()} Cake Delights. All rights reserved.</p>
+          <p className="text-sm">&copy; {new Date().getFullYear()} KBSBakes. All rights reserved.</p>
         </div>
       </div>
     </footer>
