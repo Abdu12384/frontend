@@ -5,7 +5,6 @@ import NavBar from '../../Components/Navbar';
 import AccountDetailsImg  from '../../assets/images/accountimg.avif'
 import OrderHistoryImg  from '../../assets/images/order-history.webp'
 import ShoppingCartImg  from '../../assets/images/shoping-cart.jpg'
-import WishlistImg  from '../../assets/images/wish-list.jpg'
 import AddressImg  from '../../assets/images/address.jpg'
 import WishlistImg  from '../../assets/images/wish-list.jpg'
 import WalletImg  from '../../assets/images/wallet.jpeg'
