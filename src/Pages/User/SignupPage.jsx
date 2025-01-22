@@ -6,6 +6,7 @@ import OTPInput from '../../Components/OTPvarify';
 import {GoogleLogin} from '@react-oauth/google'
 import toast, { Toaster } from "react-hot-toast";
 import { useDispatch } from 'react-redux';
+import axioInstence from '../../utils/axioInstence';
 // import { loginSuccess } from '../../redux/slices/authSlice';
 
 function SignupPage() {
@@ -69,7 +70,7 @@ const dispatch = useDispatch()
         setLoading(true)
         console.log("Form Data Updated:", formData);
         try {
-          const response = await axios.post('http://localhost:3000/auth/signup',formData)
+          const response = await axioInstence.post('/auth/signup',formData)
           console.log("Respose:",response.data);
           setOtpModalVisible(true)
         } catch (error) {

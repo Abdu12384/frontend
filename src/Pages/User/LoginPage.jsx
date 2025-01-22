@@ -81,7 +81,7 @@ function LoginPage() {
        const {credential} = response
        
                   
- const res = await axioInstence.post('http://localhost:3000/auth/google/signup', { tokenId:credential });
+ const res = await axioInstence.post('/auth/google/signup', { tokenId:credential });
  console.log('Google SignUp Successful:', res);
        if (res.data) {
           toast.success(res.data.message);

@@ -32,24 +32,25 @@ function UserRoute() {
             <Route path='reset-password/:token' element={<ResetPassword/>}/>
             
        </Route>
-        <Route path='home' element={<Home/>}/>
-        <Route path='product-details/:id' element={<ProductDetails/>}/>
+            <Route path='home' element={<Home/>}/>
+            <Route path='product-details/:id' element={<ProductDetails/>}/>
 
-    <Route element={<ProtectedRoute/>}>
-        <Route path='cakes' element={<CakePage/>}/> 
-        <Route path='dashboard' element={<UserDashboard/>}/> 
-        <Route path='account-details' element={<UserDetailsForm/>}/> 
-        <Route path='Address' element={<AddressPage/>}/> 
-        <Route path='cart' element={<CartPage/>}/> 
-        <Route path='checkout' element={<CheckoutPage/>}/> 
-        <Route path='orderdetails' element={<OrderList/>}/> 
-        <Route path='wishlist' element={<Wishlist/>}/> 
-        <Route path='wallet' element={<WalletPage/>}/> 
-        <Route path='order-success' element={<OrderConfirmation/>}/> 
-        <Route path='order-failed' element={<PaymentError/>}/> 
-    </Route>
-        <Route path='about' element={<AboutPage/>}/> 
-        <Route path='contact' element={<ContactPage/>}/> 
+          <Route element={<ProtectedRoute/>}>
+              <Route path='cakes' element={<CakePage/>}/> 
+              <Route path='dashboard' element={<UserDashboard/>}/> 
+              <Route path='account-details' element={<UserDetailsForm/>}/> 
+              <Route path='Address' element={<AddressPage/>}/> 
+              <Route path='cart' element={<CartPage/>}/> 
+              <Route path='checkout' element={<CheckoutPage/>}/> 
+              <Route path='orderdetails' element={<OrderList/>}/> 
+              <Route path='wishlist' element={<Wishlist/>}/> 
+              <Route path='wallet' element={<WalletPage/>}/> 
+              <Route path='order-success' element={<OrderConfirmation/>}/> 
+              <Route path='order-failed' element={<PaymentError/>}/> 
+          </Route>
+
+         <Route path='about' element={<AboutPage/>}/> 
+         <Route path='contact' element={<ContactPage/>}/> 
          <Route path="*" element={<PageNotFound />} />
     </Routes>
   )
