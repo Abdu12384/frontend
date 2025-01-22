@@ -58,7 +58,7 @@ export const toggleProductStatus = async (productId, currentStatus) => {
 
 export const fetchCategories = async () => {
     try {
-        const response = await axioInstence.get('/admin/categories');
+        const response = await axioInstence.get('/user/categories');
         return response.data; 
     } catch (error) {
         console.error('Error fetching categories', error);
