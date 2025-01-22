@@ -2,12 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { User, Clock, Truck, ShoppingCart, Heart, MapPin, Wallet, LogOut } from 'lucide-react';
 import NavBar from '../../Components/Navbar';
+import AccountDetailsImg  from '../../assets/images/accountimg.avif'
+import OrderHistoryImg  from '../../assets/images/order-history.webp'
+import ShoppingCartImg  from '../../assets/images/shoping-cart.jpg'
+import WishlistImg  from '../../assets/images/wish-list.jpg'
+import AddressImg  from '../../assets/images/address.jpg'
+import WishlistImg  from '../../assets/images/wish-list.jpg'
+import WalletImg  from '../../assets/images/wallet.jpeg'
 const UserDashboard = () => {
   const dashboardItems = [
     {
       title: 'Account Details',
       icon: User,
-      image: '/src/assets/images/accountimg.avif ',
+      image: AccountDetailsImg,
       link: '/user/account-details',
       size: 'large',
       color: 'purple',
@@ -16,25 +23,16 @@ const UserDashboard = () => {
     {
       title: 'Order History',
       icon: Clock,
-      image: '/src/assets/images/order-history.webp',
+      image: OrderHistoryImg,
       link: '/user/orderdetails',
       size: 'medium',
       color: 'blue',
       delay: '0.1s'
     },
     {
-      title: 'Track Order',
-      icon: Truck,
-      image: '/src/assets/images/track-order.jpg',
-      link: '/track-order',
-      size: 'tall',
-      color: 'green',
-      delay: '0.2s'
-    },
-    {
       title: 'Shopping Cart',
       icon: ShoppingCart,
-      image: '/src/assets/images/shoping-cart.jpg',
+      image: ShoppingCartImg,
       link: '/user/cart',
       size: 'medium',
       color: 'orange',
@@ -43,7 +41,7 @@ const UserDashboard = () => {
     {
       title: 'Wishlist',
       icon: Heart,
-      image: '/src/assets/images/wish-list.jpg',
+      image: WishlistImg,
       link: '/user/wishlist',
       size: 'tall',
       color: 'red',
@@ -52,7 +50,7 @@ const UserDashboard = () => {
     {
       title: 'Address',
       icon: MapPin,
-      image: '/src/assets/images/address.jpg',
+      image: AddressImg,
       link: '/user/address',
       size: 'small',
       color: 'indigo',
@@ -61,7 +59,7 @@ const UserDashboard = () => {
     {
       title: 'Wallet',
       icon: Wallet,
-      image: '/src/assets/images/wallet.jpeg',
+      image: WalletImg,
       link: '/user/wallet',
       size: 'medium',
       color: 'yellow',

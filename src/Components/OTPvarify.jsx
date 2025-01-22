@@ -105,6 +105,7 @@ export default function OTPInput({email,otpLength = 6}) {
         } else {
         toast.error('Invalid OTP. Please try again.')
       }
+      navigate('/user/login')
     } catch (error) {
       console.error('Error verifying OTP:', error);
       toast.error(error.response.data.message)
