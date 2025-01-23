@@ -78,13 +78,12 @@ const CheckoutPage = () => {
             });
         }
     } catch (error) {
-        toast.error(error.response?.data?.message || 'Failed to fetch cart items');
         console.error('Cart fetch error:', error);
     }
 };
    
 
-   console.log('car',cartItems);
+
 
 
    const fetchAddresses = async () => {
@@ -97,13 +96,12 @@ const CheckoutPage = () => {
             setSelectedAddress(data.find(addr => addr.isDefault) || data[0]);
         }
     } catch (error) {
-        toast.error(error.response?.data?.message || 'Failed to fetch addresses');
         console.error('Error fetching addresses:', error);
     }
 };
 
 
-   console.log('wallet balance here',walletBalance);
+
    
    
 
@@ -117,7 +115,6 @@ const CheckoutPage = () => {
             setWalletBalance(data); 
         }
     } catch (error) {
-        toast.error(error.response?.data?.message || 'Failed to fetch wallet balance');
         console.error('Error loading wallet balance:', error);
     }
 };

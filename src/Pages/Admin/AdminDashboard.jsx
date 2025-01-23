@@ -134,17 +134,17 @@ useEffect(() => {
             <div key={index} className="flex justify-between items-center mb-4 last:mb-0">
               <span className="text-gray-400 text-sm font-semibold mr-4">{index + 1}</span>
                 <img
-                   src={product?.images[0]}
+                   src={product?.productImage[0]}
                    alt={product?.productName}
                    className="w-14 h-14 object-cover  rounded-md"
                     />
               <div className="flex flex-1 items-center ml-4">
                 <div>
                   <p className="font-medium text-white">{product?.productName}</p>
-                  <p className="text-sm text-gray-400">{product?.salesCount} sales</p>
+                  <p className="text-sm text-gray-400">{product?.totalQuantitySold} sales</p>
                 </div>
               </div>
-              <span className="font-medium">{product?.revenue}</span>
+              <span className="font-medium">{product?.totalRevenue}</span>
             </div>
           ))}
         </div>
@@ -155,8 +155,8 @@ useEffect(() => {
           <h2 className="text-xl font-semibold mb-6">Top Categories</h2>
           {topCategories.map((category, index) => (
             <div key={index} className="flex justify-between items-center mb-4 last:mb-0">
-              <span>{category?.name}</span>
-              <span className="font-medium">{category?.salesCount}</span>
+              <span>{category?.categoryName}</span>
+              <span className="font-medium">{category?.totalQuantitySold}</span>
             </div>
           ))}
         </div>

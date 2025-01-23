@@ -185,7 +185,7 @@ const handleDelete = async (couponId) => {
             <button className="p-2 rounded-full hover:bg-gray-100">
               <ChevronLeft className="w-5 h-5" />
             </button>
-            {[1, 2, 3, 4, 5].map((page) => (
+            {[1].map((page) => (
               <button
                 key={page}
                 className={`w-8 h-8 flex items-center justify-center rounded-full ${
