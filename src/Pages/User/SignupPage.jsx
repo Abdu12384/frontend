@@ -7,7 +7,8 @@ import {GoogleLogin} from '@react-oauth/google'
 import toast, { Toaster } from "react-hot-toast";
 import { useDispatch } from 'react-redux';
 import axioInstence from '../../utils/axioInstence';
-// import { loginSuccess } from '../../redux/slices/authSlice';
+import { userLoginSuccess } from '../../redux/slices/authSlice';
+
 
 function SignupPage() {
 
@@ -63,6 +64,9 @@ const dispatch = useDispatch()
         return Object.keys(newErrors).length === 0;
       };
       
+
+
+
       const handleSubmit = async (e)=>{
         e.preventDefault()
         if(!validateForm()) return
@@ -97,13 +101,13 @@ const dispatch = useDispatch()
           const {credential} = response
           
           const res = await axioInstence.post('/auth/google/signup', { tokenId:credential });
-          console.log('Google SignUp Successful:', res.data);
+          console.log('Google SignU', res.data);
           if(res.data){
             toast.success("Signup successful! Welcome KBSBakes.")
             const{user, role} = res.data
             if(role === 'user'){
               setTimeout(() => {
-                dispatch(loginSuccess({user, role}))
+                dispatch(userLoginSuccess({user, role}))
               },2000);
             }else{
               toast.error("SignUp failed!.")
