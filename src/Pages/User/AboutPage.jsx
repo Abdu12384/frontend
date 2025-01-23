@@ -4,8 +4,6 @@ import { PlayCircle, User, ShoppingCart, Heart, Menu, X } from "lucide-react"
 import "../../index.css"
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom"
-import AboutImg1 from '../../assets/images/AboutPageImg'
-import AboutImg2 from '../../assets/images/AboutPageImg2'
 
 
 export default function AboutPage() {
@@ -86,7 +84,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-     
+      {/* Mission Section */}
       <section className="py-20 px-4 bg-[#f0e6e0]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -105,7 +103,7 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-square rounded-2xl overflow-hidden animate-bounce-in">
               <img
-                src={AboutImg1}
+                src="https://res-console.cloudinary.com/dujuwqvz5/media_explorer_thumbnails/1c44645408c2c7cd041b77f629092f2c/detailed"
                 alt="Team collaboration"
                 className="w-full h-full object-cover"
               />
@@ -158,7 +156,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-square rounded-2xl overflow-hidden animate-bounce-in">
               <img
-                src={AboutImg2}
+                src="https://res-console.cloudinary.com/dujuwqvz5/media_explorer_thumbnails/de86c7d02f162704317e86aaf97f20ab/detailed"
                 alt="Team collaboration"
                 className="w-full h-full object-cover"
               />
