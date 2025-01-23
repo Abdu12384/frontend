@@ -1,8 +1,8 @@
 import React from "react";
 import { Mail, MapPin,ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import contactImg1 from '../../../src/assets/images/contactImg'
-import contactImg2 from '../../../src/assets/images/contactImg2'
+import contactImg1 from '../../../src/assets/images/contactImg.jpg'
+import contactImg2 from '../../../src/assets/images/contactImg2.png'
 
 
 export default function ContactPage() {
