@@ -1,6 +1,8 @@
 import React from "react";
 import { Mail, MapPin,ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import contactImg1 from '../../../src/assets/images/contactImg'
+import contactImg2 from '../../../src/assets/images/contactImg2'
 
 
 export default function ContactPage() {
@@ -8,7 +10,7 @@ export default function ContactPage() {
     <div
       className="min-h-screen relative overflow-hidden"
       style={{
-        backgroundImage: "url('https://res-console.cloudinary.com/dujuwqvz5/media_explorer_thumbnails/96a926e020f122c021c72dec9b5b840b/detailed')", // Replace with your image path
+        backgroundImage: `url(${contactImg2})`, // Replace with your image path
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -58,7 +60,7 @@ export default function ContactPage() {
               {/* Decorative Image */}
               <div className="relative">
                 <img
-                  src="https://res-console.cloudinary.com/dujuwqvz5/media_explorer_thumbnails/cf47cee211b79e1cc40200005df4afe3/detailed"
+                  src={contactImg1}
                   alt="Decorative"
                   className="w-full max-w-md rounded-2xl"
                 />
