@@ -182,6 +182,7 @@ const CheckoutPage = () => {
    
    const handleSaveAddress = () => {
     setShowAddressForm(false); 
+    fetchAddresses()
   };
 
 
