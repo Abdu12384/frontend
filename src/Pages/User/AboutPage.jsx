@@ -4,8 +4,8 @@ import { PlayCircle, User, ShoppingCart, Heart, Menu, X } from "lucide-react"
 import "../../index.css"
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom"
-import aboutImg1 from '../../assets/images/aboutImg1'
-import aboutImg2 from '../../assets/images/aboutImg2'
+import AboutImg1 from '../../assets/images/AboutPageImg'
+import AboutImg2 from '../../assets/images/AboutPageImg2'
 
 
 export default function AboutPage() {
@@ -105,7 +105,7 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-square rounded-2xl overflow-hidden animate-bounce-in">
               <img
-                src={aboutImg1}
+                src={AboutImg1}
                 alt="Team collaboration"
                 className="w-full h-full object-cover"
               />
@@ -158,7 +158,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-square rounded-2xl overflow-hidden animate-bounce-in">
               <img
-                src={aboutImg2}
+                src={AboutImg2}
                 alt="Team collaboration"
                 className="w-full h-full object-cover"
               />
