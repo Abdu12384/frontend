@@ -78,21 +78,24 @@ console.log(formData);
     const validate = () => {
       const newErrors = {};
     
+      const fullNameRegex=/^[a-zA-Z\s]+$/
+      const mobileRegex=/^[1-9][0-9]{9}$/
+      const emailRegex = /^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+ 
 
-      if (!formData.fullName.trim()) {
-        newErrors.fullName = "Full name is required.";
+      if (!formData.fullName.trim() || !fullNameRegex.test(formData.fullName)) {
+        newErrors.fullName = "Full name is not proper.";
       }
     
 
-      if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email)) {
+      if (!formData.email.trim() || !emailRegex.test(formData.email)) {
         newErrors.email = "A valid email is required.";
       }
     
-
-      if (!formData.mobile.trim() || !/^\d{10}$/.test(formData.mobile)) {
+      
+      if (!formData.mobile.trim() || !mobileRegex.test(formData.mobile)) {
         newErrors.mobile = "Mobile number must be 10 digits.";
       }
-    
 
       if (formData.newPassword) {
         if (formData.newPassword.length < 8) {

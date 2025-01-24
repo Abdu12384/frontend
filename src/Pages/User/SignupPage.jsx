@@ -38,10 +38,18 @@ const dispatch = useDispatch()
       
       const validateForm = () => {
         const newErrors = {};
-        if (!formData.fullName) newErrors.fullName = 'Full Name is required.';
+        const nameRegex = /^[a-zA-Z\s]+$/;
+        const numberRegex = /^[1-9][0-9]$/;
+
+        if (!formData.fullName||!nameRegex.test(formData.fullName)){
+          newErrors.fullName = 'Full name is not proper.';
+       }        
         if (!formData.email) newErrors.email = 'Email is required.';
         else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid.';
-        if (!formData.mobile) newErrors.mobile = 'Phone Number is required.';
+
+        if (!formData.mobile || !numberRegex.test(formData.mobile)){ 
+          newErrors.mobile = 'Mobile number must be 10 digits.';
+        }        
         else if (formData.mobile.length < 10) newErrors.mobile = 'Phone Number is invalid.';
         if (!formData.password) {
           newErrors.password = 'Password is required.';

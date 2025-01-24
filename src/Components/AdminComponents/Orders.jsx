@@ -306,10 +306,13 @@ export function OrdersPage() {
               <tbody>
                 {orders.map((order) => (
                   <>
-                  <tr
+                   <tr
                     key={order._id}
-                    className="border-b border-white border-opacity-10 hover:bg-white hover:bg-opacity-5 transition-colors duration-200"
-                    onClick={() => toggleOrderDetails(order._id)}
+                    className={`border-b border-white border-opacity-10 
+                      hover:bg-white hover:bg-opacity-5 transition-colors duration-200
+                      ${order?.products?.some(order => order.returnRequest) 
+                        && order?.products?.some(order => order.returnRequest.status !=='approved') ? 'bg-yellow-400' : ''}`}                     
+                      onClick={() => toggleOrderDetails(order._id)}
                   >
                  
                        <td className="py-4 px-4">
