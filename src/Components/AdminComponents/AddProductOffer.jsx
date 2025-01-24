@@ -11,9 +11,51 @@ const AddProductOffer = ({ product, onCancel }) => {
   const [offerPercentage, setOfferPercentage] = useState('');
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  const [errors, setErrors] = useState({});
+
+
+
+  const offerNameRegex = /^[A-Za-z\s]+$/;
+
 
   const handleSubmit = async(e) => {
     e.preventDefault();
+
+    let formIsValid = true;
+    const validationErrors = {};
+
+
+    if (!offerName || !offerNameRegex.test(offerName)) {
+      formIsValid = false;
+      validationErrors.offerName = 'Enter valid Offer Name';
+    }
+
+
+    if (!offerPercentage || offerPercentage < 0 || offerPercentage > 100) {
+      formIsValid = false;
+      validationErrors.offerPercentage = 'Offer Percentage should be between 0 and 100.';
+    }
+
+    if (!startDate) {
+      formIsValid = false;
+      validationErrors.startDate = 'Start Date is required.';
+    }
+    if (!endDate) {
+      formIsValid = false;
+      validationErrors.endDate = 'End Date is required.';
+    }
+    if (startDate && endDate && startDate > endDate) {
+      formIsValid = false;
+      validationErrors.dateRange = 'Start Date cannot be later than End Date.';
+    }
+
+
+    if (!formIsValid) {
+      setErrors(validationErrors);
+      return;
+    }
+
+
 try {
   
 
@@ -33,7 +75,7 @@ try {
     setOfferPercentage('');
     setStartDate(null);
     setEndDate(null);
-
+     onCancel()
 } catch (error) {
   
 }
@@ -58,6 +100,9 @@ try {
             className="w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 px-3 py-2"
             placeholder="Summer Sale"
           />
+            {errors.offerName && (
+            <span className="text-red-500 text-sm">{errors.offerName}</span>
+          )}
         </div>
         <div>
           <label htmlFor="offerPercentage" className="block text-sm font-medium text-gray-200 mb-1">
@@ -73,6 +118,9 @@ try {
             className="w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 px-3 py-2"
             placeholder="%"
           />
+            {errors.offerPercentage && (
+            <span className="text-red-500 text-sm">{errors.offerPercentage}</span>
+          )}
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
@@ -88,6 +136,9 @@ try {
               />
               <Calendar className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
             </div>
+            {errors.startDate && (
+              <span className="text-red-500 text-sm">{errors.startDate}</span>
+            )}
           </div>
           <div>
             <label htmlFor="endDate" className="block text-sm font-medium text-gray-200 mb-1">
@@ -102,6 +153,12 @@ try {
               />
               <Calendar className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
             </div>
+            {errors.endDate && (
+              <span className="text-red-500 text-sm">{errors.endDate}</span>
+            )}
+            {errors.dateRange && (
+              <span className="text-red-500 text-sm">{errors.dateRange}</span>
+            )}
           </div>
         </div>
         <button
