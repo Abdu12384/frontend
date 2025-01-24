@@ -4,12 +4,13 @@ import { Star, ShoppingCart, Heart, ChevronLeft, ChevronRight, Cake, AlertTriang
 import 'react-medium-image-zoom/dist/styles.css';
 import { useParams } from 'react-router-dom';
 import axiosInstence from '../utils/axioInstence';
-import Breadcrumbs from './BrudCrums';
 import toast, { Toaster } from "react-hot-toast";
 import ProductList from './ProductList';
 import UserBreadcrumb from './UserBrudCrums';
 import NavBar from './Navbar';
 import Footer from './Footer';
+import { userLogout } from '../redux/slices/authSlice';
+import { useDispatch } from 'react-redux';
 
 
 
@@ -24,6 +25,7 @@ const ProductDetails = () => {
   const [selectedVariant, setSelectedVariant] = useState(product?.variants[0]||null); 
   const [selectedWeight, setSelectedWeight] = useState(null);
 
+  const dispatch = useDispatch()
 
 
 
@@ -126,6 +128,9 @@ const ProductDetails = () => {
     } catch (error) {
       console.error(error.response.data);
       toast.error(error.response.data.message);
+      if (error.response?.data?.message === 'Please login to continue') {
+        dispatch(userLogout())
+      } 
     }
      
   }

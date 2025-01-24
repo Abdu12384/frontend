@@ -36,10 +36,10 @@ const AddressForm = ({ onSubmit, initialAddress }) => {
          const addressRegex = /^[a-zA-Z0-9\s]+$/;
  
     
-         if (!addressName.test(addressData.fullName)) {
+         if (!addressData.fullName.trim()||!addressName.test(addressData.fullName)) {
           newErrors.fullName = "Full name is not proper.";
         }
-        
+
         if (!addressData.mobile.trim() || !mobileRegex.test(addressData.mobile)) {
           newErrors.mobile = "Mobile number must be 10 digits.";
         }
