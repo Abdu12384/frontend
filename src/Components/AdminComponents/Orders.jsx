@@ -310,8 +310,8 @@ export function OrdersPage() {
                     key={order._id}
                     className={`border-b border-white border-opacity-10 
                       hover:bg-white hover:bg-opacity-5 transition-colors duration-200
-                      ${
-                         order?.products?.some(product => product.returnRequest?.status  !=='approved') ? 'bg-yellow-400' : ''}`}                     
+                      ${order?.products?.some(product => product.returnRequest) 
+                        && order?.products?.some(product => product.returnRequest?.status  !=='approved') ? 'bg-yellow-400' : ''}`}                     
                       onClick={() => toggleOrderDetails(order._id)}
                   >
                  
