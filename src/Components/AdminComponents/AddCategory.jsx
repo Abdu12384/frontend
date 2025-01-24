@@ -18,10 +18,17 @@ function AddCategory({onClose, onSuccess, category={} }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const nameRegex = /^[a-zA-Z\s]+$/;
+    if (!nameRegex.test(formData.name)) {
+      toast.error("Invalid category name.");
+      return;
+    }
+
     try {
        if(category?._id){
         const response = await axioInstence.put(`/admin/categories/${category._id}`,formData)
-             console.log('mnbvcxz',response.data);  
+  
              toast.success(response.data.message || 'Category updated successfully');
             
        } else{

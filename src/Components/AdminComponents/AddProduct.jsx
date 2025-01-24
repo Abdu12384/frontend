@@ -92,8 +92,10 @@ const AddProduct = ({onCancel,onProductAdded}) => {
    const validateForm = () => {
     const newErrors = {};
   
+    const nameRegex = /^[a-zA-Z\s]+$/;
+
     // Validate product name
-    if (!productData.productName.trim()) {
+    if (!nameRegex.test(productData.productName)) {
       newErrors.productName = "Product name is required";
     }
   

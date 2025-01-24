@@ -31,15 +31,20 @@ const AddressForm = ({ onSubmit, initialAddress }) => {
 
       const validate = () => {
         const newErrors = {};
+        const addressName=/^[a-zA-Z\s]+$/
+        const mobileRegex=/^[1-9][0-9]{9}$/
+         const addressRegex = /^[a-zA-Z0-9\s]+$/;
+ 
     
-        if (!addressData.fullName.trim()) {
-          newErrors.fullName = "Full name is required.";
+         if (!addressName.test(addressData.fullName)) {
+          newErrors.fullName = "Full name is not proper.";
         }
-        if (!addressData.mobile.trim() || !/^\d{10}$/.test(addressData.mobile)) {
+        
+        if (!addressData.mobile.trim() || !mobileRegex.test(addressData.mobile)) {
           newErrors.mobile = "Mobile number must be 10 digits.";
         }
 
-        if (!addressData.address.trim()) {
+        if (!addressData.address.trim()||!addressRegex.test(addressData.address)) {
           newErrors.address = "Address is required.";
         }
 

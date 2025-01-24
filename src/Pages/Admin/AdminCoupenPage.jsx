@@ -15,8 +15,9 @@ export default function CouponManagement() {
   const validateCoupon = () => {
     const newErrors = {};
     
-    if (!newCoupon.code.trim()) {
-      newErrors.code = "Coupon code is required";
+    const couponRegex=/^[a-zA-Z0-9\s]+$/
+    if (!couponRegex.test(newCoupon.code)) {
+      newErrors.code = "Coupon code is not valid";
     }
 
     const discount = parseFloat(newCoupon.discount);
