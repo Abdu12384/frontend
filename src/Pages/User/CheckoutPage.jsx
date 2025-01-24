@@ -4,6 +4,8 @@ import toast, { Toaster } from "react-hot-toast";
 import { OrderAnimation } from '../../Components/cakeAnimation';
 import CouponCard from '../../Components/Coupon';
 import NavBar from '../../Components/Navbar';
+import { useDispatch } from 'react-redux';
+import { userLogout } from '../../redux/slices/authSlice';
 import { useNavigate } from 'react-router-dom';
 import { fetchCartItems, deductFromWallet, initiatePayment, verifyPayment, PaymentFailed } from '../../services/authService';
 import { fetchAddressDetails, fetchWalletBalance, placeOrder, applyCoupon } from '../../services/authService';
@@ -42,6 +44,7 @@ const CheckoutPage = () => {
   const [couponCode, setCouponCode] = useState('');
   const [appliedCoupon, setAppliedCoupon] = useState(null);
 
+  const dispatch = useDispatch()
   const navigate = useNavigate()
 
   console.log('summ',cartSummary);
@@ -79,6 +82,9 @@ const CheckoutPage = () => {
         }
     } catch (error) {
         console.error('Cart fetch error:', error);
+        if (error.response?.data?.message === 'Please login to continue') {
+          dispatch(userLogout())
+      } 
     }
 };
    

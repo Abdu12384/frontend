@@ -5,12 +5,16 @@ import { useNavigate } from 'react-router-dom';
 import NavBar from '../../Components/Navbar';
 import { fetchCartItems, removeCartItem, updateCartItemQuantity } from '../../services/authService';
 import { BreadcrumbUserDhbrd } from '../../Components/BrudCrums';
+import { useDispatch } from 'react-redux';
+import { userLogout } from '../../redux/slices/authSlice';
+
 const CartPage = () => {
   const [cartsummury, setCartSummury]= useState()
   const [items, setItems] = useState([]);
   const navigate = useNavigate()
 
-  
+  const dispatch = useDispatch()
+
     const loadCartItems = async () => {
         try {
             const data = await fetchCartItems(); 
@@ -19,7 +23,9 @@ const CartPage = () => {
             setCartSummury(data.summary || {}); 
         } catch (error) {
             console.error('Error loading cart items', error);
-
+            if (error.response?.data?.message === 'Please login to continue') {
+              dispatch(userLogout())
+         } 
         }
     };
 
