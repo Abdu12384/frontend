@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import { adminLoginSuccess } from '../../redux/slices/adminSlice'
 import toast, { Toaster } from "react-hot-toast";
 import axioInstence from '../../utils/axioInstence'
+import adminLoginImg from "../../assets/images/adminimg.png"
 
 export default function AdminLogin() {
   const [email, setEmail] = useState('')
@@ -70,7 +71,7 @@ export default function AdminLogin() {
       <Toaster position="top-right" reverseOrder={false}/>
       <div className="hidden lg:block lg:w-1/2">
         <img
-          src="/src/assets/images/adminimg.png"
+          src={adminLoginImg}
           alt="Admin dashboard illustration"
           className="object-cover w-full h-full"
         />
